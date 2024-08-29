@@ -21,12 +21,12 @@
 }
 
 .btn{
-    padding: 10px 21px;
+    padding: 8px 17px;
     background-color: #D5ED9F;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    font-size: large;
+    font-size: clamp(17px, 1.5vw, 20px)
 }
 
 .text{
@@ -34,12 +34,24 @@
     margin-right: 5px;
 }
 
+.btnWrap{
+    display: flex;
+    align-items: center;
+    font-size: 12.8px;
+}
+
+.btnWrap button{
+    margin-left: 10px;
+}
+
 .doneBtn{
-    background-color: green;
-    color: white;
-    padding: 1px 2px;
+    background-color: #D5ED9F;
+    padding-inline: clamp(0.1rem, 1.5vw + 0.5rem, 0.5rem);
+    padding-block: clamp(0.2rem, 1.5vw + 0.5rem, 0.7rem);
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: clamp(11px, 1.5vw, 13.333px)
 }
 
 @media (max-width : 600px) {

@@ -1,7 +1,6 @@
 .formDiv{
     margin: 30px auto;
     width: 70%;
-    /* background-color: aqua; */
     display: flex;
     padding: 25px;
     justify-content: space-between;
@@ -23,12 +22,13 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .inpbtn{
-    padding: 10px 21px;
+    padding-inline: clamp(0.7rem, 1.5vw + 0.7rem, 1rem );
+    padding-block: clamp(0.3rem, 1.5vw + 0.7rem, 0.6rem);
     background-color: #D5ED9F;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    font-size: large;
+    font-size: clamp(0.8rem , 1.5vw, 1.2rem);
 }
 
 @media (max-width : 600px) {

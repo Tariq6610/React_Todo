@@ -1,8 +1,8 @@
 .header{
     background-color:#D5ED9F;
     padding: 20px;
-    font-size: 2.5em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: clamp(1.5em, 2.5vw + 1em, 2.3em);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     box-shadow: 15px 6px 10px rgba(0,0,0,0.3);
 

@@ -1,34 +1,47 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./todoList.module.css"
+import TodoContext from "../context/TodoContext";
 
-export default function TodoList({todoList, setTodoList, settodo, todo={todo}}){
+export default function TodoList(){
+  
+  const {todoList, setTodoList} = useContext(TodoContext)
 
-  function handleClick(clickedTodo){
-    console.log(`${clickedTodo} has been deleted`);
-    setTodoList(todoList.filter(todo => todo !== clickedTodo ))
+  function handledelete(id){
+    let newArr = todoList.filter((todo) => todo.id !== id)
+    setTodoList(newArr) 
   }
 
  
 
-  function doneTasks(){
-    console.log(todo);
-    
-    
+  function doneTasks(id){
+  let newArr = todoList.map((todo)=> {
+      if(todo.id === id){
+        todo.done = true;
+        return todo
+      }
+      return todo;
+    } )
+
+    setTodoList(newArr)
 
     
   }
 
-  let listStyle = todoList.length ? styles.list : ""; 
+  let ListOfTodos = todoList.filter((todo)=> todo.done === false) 
+  let listStyle = ListOfTodos.length ? styles.list : ""; 
   return (
     <><div className={listStyle}>
-        {todoList.map((todo) => (
-          <div key={todo} className={styles.todo}>
+        {ListOfTodos.map((val) => (
+          <div key={val.id} className={styles.todo}>
             <div className={styles.textBtnWrap}>
               <div>
-            <h3 className={styles.text} key={todo}>{todo}</h3>
-            <span><button onClick={()=> doneTasks(todo)} className={styles.doneBtn}>done</button></span>
+            <h3 className={styles.text} key={val.id}>{val.name}</h3>
               </div>
-            <span><button onClick={()=> handleClick(todo)} className={styles.btn}>X</button></span>
+            <span className={styles.btnWrap}>
+              <button onClick={()=> doneTasks(val.id)} className={styles.doneBtn}>Done?</button>
+              <button onClick={()=> handledelete(val.id)} className={styles.btn}><i className="fa-sharp fa-solid fa-trash" style={{color: "rgb(53, 49, 49)"}}></i>
+              </button>
+              </span>
             </div>
             <hr className={styles.hr}/>
           </div>
