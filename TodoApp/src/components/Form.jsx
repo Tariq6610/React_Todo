@@ -8,10 +8,11 @@ export default function Form({}){
 
   const {todoList, setTodoList} = useContext(TodoContext)
 
-const inputRef = useRef(null);
-useEffect(()=>{
-  inputRef.current?.focus();
-})
+  //To focus automatically on input, but i comment it out because it has bad user experience on mobiles
+// const inputRef = useRef(null);
+// useEffect(()=>{
+//   inputRef.current?.focus();
+// })
 
 function makeId(){
   return Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
@@ -32,7 +33,7 @@ function makeId(){
           value={todo.name}
           type="text"
           placeholder="Add Todo..."
-          ref={inputRef}
+          // ref={inputRef}
         />
         <button className={styles.inpbtn} onClick={addTodo}>Add</button>
       </div>
