@@ -1,6 +1,8 @@
 .header{
-    background-color:#D5ED9F;
+    /* background-color:#D5ED9F; */
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(100,43,115,1) 0%, rgba(4,0,4,1) 90% );
     padding: 20px;
+    color: white;
     font-size: clamp(1.5em, 2.5vw + 1em, 2.3em);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;

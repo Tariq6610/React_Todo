@@ -7,12 +7,12 @@ export default function DoneTasks() {
 
     const doneTasks = todoList.filter(val => val.done === true)
 
-    let listStyle = doneTasks.length ? styles.list : ""; 
-
+    
     function clearAll(){
       setTodoList(todoList.filter(todo => todo.done === false))
     }
- 
+    
+    let listStyle = doneTasks.length ? styles.list : ""; 
 
      if(doneTasks.length){
         return(
@@ -28,7 +28,7 @@ export default function DoneTasks() {
             {doneTasks.map((val) => (
               <div key={val.id} className={styles.todo}>
                 <div className={styles.textCont}> 
-                <span><i className="fa-sharp fa-solid fa-circle-check" style={{color: "#5a7c0c"}}></i></span>
+                <span><i className="fa-sharp fa-solid fa-circle-check" style={{color: "#20002c"}}></i></span>
                 <h3 className={styles.text} key={val.id}>{val.name}</h3>
                 </div>
                 <hr className={styles.hr}/>

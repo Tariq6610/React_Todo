@@ -39,7 +39,7 @@ export default function TodoList(){
               </div>
             <span className={styles.btnWrap}>
               <button onClick={()=> doneTasks(val.id)} className={styles.doneBtn}>Done?</button>
-              <button onClick={()=> handledelete(val.id)} className={styles.btn}><i className="fa-sharp fa-solid fa-trash" style={{color: "rgb(53, 49, 49)"}}></i>
+              <button onClick={()=> handledelete(val.id)} className={styles.btn}><i className="fa-sharp fa-solid fa-trash" style={{color: "white"}}></i>
               </button>
               </span>
             </div>
